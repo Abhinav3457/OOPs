@@ -1,0 +1,29 @@
+.vscode/
+*.exe
+*.out
+*.o
+*.obj
+*.log
+
+# Compiled executables
+*.exe
+*.out
+
+# Object files
+*.o
+*.obj
+
+# Debug files
+*.pdb
+
+# Visual Studio Code settings
+.vscode/
+
+# Temporary files
+*.tmp
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
