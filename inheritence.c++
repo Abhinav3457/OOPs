@@ -17,15 +17,21 @@
     body of derived class
 } */
 
-// always base classproperty initialized first then derived class property initialized  
+/*Constructor always calls first for base class then child class and destructor always child class called 
+first then base class*/
+
+// always base-parent class property initialized first then derived class property initialized  
 #include<bits/stdc++.h>
 using namespace std;
 
 class vechile{
+    // string name;
+    protected:
     string name;
-    public:
     string model;
     int numberoftyre;
+    
+    public:
     string getname(){
         return this->name;
     }
@@ -35,37 +41,57 @@ class vechile{
         this->model=m;
         this->numberoftyre=t;
     }
-    public:
     void startengine(){
         cout<<"Engine started"<<this->name<<" "<<this->model<<" "<<this->numberoftyre<<endl;
     }
     void stopengine(){
         cout<<"Engine stopped"<<this->name<<" "<<this->model<<" "<<this->numberoftyre<<endl;
     }
+    ~vechile(){
+        cout<<"vechile dtor"<<endl;
+    }
 };
-class car:public vechile{
+class motorcycle:public vechile{
+    protected:
+    string handle;
+    string suspension;
     public:
+    motorcycle(string n,string m,int t,string h,string sus):vechile(n,m,t){
+        cout<<"motorcycle ctor called"<<endl;
+        this->handle=h;
+        this->suspension=sus;
+    }
+    void villi(){
+        cout<<"villi done"<<name<<endl;
+    }
+    ~motorcycle(){
+        cout<<"dtor motercyle"<<endl;
+    }
+};
+class car:
+public vechile{
+    protected:
     int doors;
     string transmission;
+    public:
     car(string n,string m,int t,int d,string tr):vechile(n,m,t){
         cout<<"I am inside car constructor"<<endl;
         this->doors=d;
         this->transmission=tr;
     }
+    /*getname() used when the attribute is in private acess specifier*/
     void startAc(){
-        cout<<"Car AC started for "<<getname()<<" "<<this->model<<" "<<this->numberoftyre<<" "<<this->doors<<" "<<this->transmission<<endl;
+        cout<<"Car AC started for "<<name<<" "<<this->model<<" "<<this->numberoftyre<<" "<<this->doors<<" "<<this->transmission<<endl;
     }
-    void startengine(){
-        cout<<"Car engine started"<<endl;
-    }
-    void stopengine(){
-        cout<<"Car engine stopped"<<endl;
+    ~car(){
+        cout<<"dtor car"<<endl;
     }
 };
 int main(){
     car c1("Toyota","Camry",4,4,"Automatic");
-    c1.startengine();
-    c1.startAc();
-    c1.stopengine();
+    // c1.startAc();
+    // m.stopengine();
+    // string name=c1.getname();
+    // cout<<m.getname()<<" private fetch by get "<<endl;
     return 0;
 }
