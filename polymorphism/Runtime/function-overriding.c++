@@ -1,6 +1,6 @@
 //  Function Overriding in C++
-#include<bits/stdc++.h>
-using namespace std;
+// #include<bits/stdc++.h>
+// using namespace std;
 
 // now the all 3 output will show Drawing shape as it was doing early binding as we see in code as i write
 // shawshape(&c); it will call the draw function of shape class as it was early binding but
@@ -94,3 +94,4 @@ int main(){
     showshape(&t);
 }
     */
+
