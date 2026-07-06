@@ -41,6 +41,7 @@
     kyunki virtual keyword use kiya hoga to actual object method call hoga
 */
 
+/*
 #include<bits/stdc++.h>
     using namespace std;
 
@@ -74,3 +75,4 @@
 
         return 0;
     }
+*/
