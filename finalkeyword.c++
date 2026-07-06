@@ -30,11 +30,9 @@
         }
     };
 */
-// ------------------------------------------------------------------------------------------------------------------
+/* ------------------------------------------------------------------------------------------------------------------
 
-// now as we can saw that our virtual function written with final key word we are not able to override it in the derived class 
-
-/*
+ now as we can saw that our virtual function written with final key word we are not able to override it in the derived class 
     final with virtual function web can not override this function
 
     class Base {
